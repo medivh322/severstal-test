@@ -1,57 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter as Router,
+  Switch,
+  Route,
+  Link } from 'react-router-dom';
+import LoginForm from './components/loginForm';
+import News from './components/news';
+import Profile from './components/profile';
+import PrivateRoute from './components/profileRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { LOGOUT_REQUEST } from './redux/constants';
 
 function App() {
+  const auth = useSelector(state => state.isAuth);
+  const dispatch = useDispatch();
+
+  function logout(){
+    dispatch({type: LOGOUT_REQUEST});
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <Container fluid>
+        <nav>
+          <ul className="nav_list">
+            <li>
+              <Link to="/">Главная</Link>
+            </li>
+            <li>
+              <Link to="/news">Новости</Link>
+            </li>
+            <li>
+              <Link to="/profile">Профиль</Link>
+            </li>
+            {auth ? <li className="btn_logout" onClick={logout}>Выйти</li> : ""}
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            Главная
+          </Route>
+          <PrivateRoute path="/profile" component={Profile} />
+          <Route path="/news">
+            <News />
+          </Route>
+          <Route path="/login">
+            <LoginForm />
+          </Route>
+        </Switch> 
+      </Container>
+    </Router>
   );
 }
 
