@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/severstal-test/static/css/main.4392cc33.chunk.css",
+    "main.js": "/severstal-test/static/js/main.5cd7e468.chunk.js",
+    "main.js.map": "/severstal-test/static/js/main.5cd7e468.chunk.js.map",
+    "runtime-main.js": "/severstal-test/static/js/runtime-main.f3ff4854.js",
+    "runtime-main.js.map": "/severstal-test/static/js/runtime-main.f3ff4854.js.map",
+    "static/css/2.818011ed.chunk.css": "/severstal-test/static/css/2.818011ed.chunk.css",
+    "static/js/2.75551f4d.chunk.js": "/severstal-test/static/js/2.75551f4d.chunk.js",
+    "static/js/2.75551f4d.chunk.js.map": "/severstal-test/static/js/2.75551f4d.chunk.js.map",
+    "index.html": "/severstal-test/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/severstal-test/static/css/2.818011ed.chunk.css.map",
+    "static/css/main.4392cc33.chunk.css.map": "/severstal-test/static/css/main.4392cc33.chunk.css.map",
+    "static/js/2.75551f4d.chunk.js.LICENSE.txt": "/severstal-test/static/js/2.75551f4d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3ff4854.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.75551f4d.chunk.js",
+    "static/css/main.4392cc33.chunk.css",
+    "static/js/main.5cd7e468.chunk.js"
+  ]
+}
